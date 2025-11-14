@@ -1,6 +1,8 @@
+# All event-related functionalities for the Discord bot.
+
+import datetime
 import discord
 from discord.ext import commands
-import datetime
 
 class EventsCog(commands.Cog):
     def __init__(self, bot):
@@ -16,7 +18,7 @@ class EventsCog(commands.Cog):
             description=f"Welcome to the server, {member.mention}!",
             timestamp=datetime.datetime.now()
         )
-        channel = discord.utils.get(member.guild.text_channels, name='welcome')
+        channel = discord.utils.get(member.guild.text_channels, name="welcome")
         if channel:
             await channel.send(embed=embed)
 
@@ -30,7 +32,7 @@ class EventsCog(commands.Cog):
         description=f"{member.mention} has left the server.",
         timestamp=datetime.datetime.now()
         )
-        channel = discord.utils.get(member.guild.text_channels, name='welcome')
+        channel = discord.utils.get(member.guild.text_channels, name="welcome")
         if channel:
             await channel.send(embed=embed)
 
@@ -40,7 +42,7 @@ class EventsCog(commands.Cog):
 
         embed = discord.Embed(
             color=discord_rgb,
-            title=f"{channel.name}",
+            title=f"#{channel.name}",
             description=f"A new channel has been created!",
             timestamp=datetime.datetime.now()
         )
