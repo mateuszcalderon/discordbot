@@ -24,9 +24,9 @@ class DaVinci(commands.Bot):
       super().__init__(command_prefix="/", intents=intents)   # Set the command prefix to '/'.
 
     async def setup_hook(self):
-       # await self.load_extension("cogs.commands")
-       await self.load_extension("cogs.events")
-       await self.tree.sync()
+      # await self.load_extension("cogs.commands")
+      await self.load_extension("cogs.events")
+      await self.tree.sync()
 
     async def on_ready(self):
       await self.change_presence(
@@ -55,7 +55,7 @@ async def click_me(interaction: discord.Interaction):
   await interaction.response.send_message(
     content="Click the button below to receive a random emoji.",
     view=view
-    )
+  )
 
 @bot.tree.command(name="ship", description="Find out how much love is between two users.")
 async def ship(ctx, user1: discord.Member, user2: discord.Member):
@@ -64,7 +64,6 @@ async def ship(ctx, user1: discord.Member, user2: discord.Member):
   empty = "🖤" * (10 - love_percent // 10)
   love_bar = f"[{filled}{empty}]"
 
-  # Generate Love Bar.
   message = (
     f"{user1.mention} x {user2.mention}\n"
     f"Love Percentage: {love_percent}%\n"
@@ -79,7 +78,12 @@ async def get_ping(interaction: discord.Interaction):
 
 @bot.tree.command(name="dice", description="Roll a six-sided dice.")
 async def roll_dice(interaction: discord.Interaction):
-   roll = random.randint(1, 6)
-   await interaction.response.send_message(f"🎲 Number: {roll}")
+  roll = random.randint(1, 6)
+  await interaction.response.send_message(f"🎲 Number: {roll}")
+
+@bot.tree.command(name="coin", description="Flip a coin.")
+async def flip_coin(interaction: discord.Interaction):
+  flip = random.choice(["HEADS", "TAILS"])
+  await interaction.response.send_message(f"🪙 It lands on: {flip}")
 
 bot.run(TOKEN)
