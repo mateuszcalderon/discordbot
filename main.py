@@ -20,11 +20,11 @@ else:
 # Define the bot class inheriting from 'commands.Bot'.
 class DaVinci(commands.Bot):
     def __init__(self):
-      intents = discord.Intents.all()   # Enable all intents.
+      intents = discord.Intents.default()
+      intents.members = True
       super().__init__(command_prefix="/", intents=intents)   # Set the command prefix to '/'.
 
     async def setup_hook(self):
-      # await self.load_extension("cogs.commands")
       await self.load_extension("cogs.events")
       await self.tree.sync()
 
@@ -38,8 +38,7 @@ class DaVinci(commands.Bot):
 # Instantiate the bot.
 bot = DaVinci()
 
-# Write the '@bot.event' down here if something goes wrong with the cogs.
-
+# Commands definition:
 @bot.tree.command(name="emoji", description="Click the button to get a random emoji.")
 async def click_me(interaction: discord.Interaction):
   emojis = ["😂", "🥰", "😍", "🤨", "😔", "😴", "🤠", "💀", "🗿"]
@@ -62,12 +61,12 @@ async def ship(ctx, user1: discord.Member, user2: discord.Member):
   love_percent = random.randint(0, 100)
   filled = "❤️" * (love_percent // 10)
   empty = "🖤" * (10 - love_percent // 10)
-  love_bar = f"[{filled}{empty}]"
+  love_bar = f"{filled}{empty}"
 
   message = (
     f"{user1.mention} x {user2.mention}\n"
-    f"Love Percentage: {love_percent}%\n"
-    f"{love_bar}"
+    f"Love Percentage: {love_percent}% \n"
+    f"Love Bar: {love_bar}"
   )
   await ctx.response.send_message(message)
 
@@ -86,4 +85,5 @@ async def flip_coin(interaction: discord.Interaction):
   flip = random.choice(["HEADS", "TAILS"])
   await interaction.response.send_message(f"🪙 It lands on: {flip}")
 
+# Run the bot using the token loaded from .env file.
 bot.run(TOKEN)
