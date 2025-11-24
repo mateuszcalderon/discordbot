@@ -6,7 +6,7 @@ da Vinci is a clean but meaningful Discord bot built with Python and discord.py,
 developed following the best practices it includes fun user interaction commands,
 automated server events, and an organized and extensible architecture.
 
-## Features:
+## 🔹 Features:
 #### Slash Commands:
   - **/coin** – Flip a coin.
   - **/dice** – Roll a six‑sided dice.
@@ -23,13 +23,15 @@ automated server events, and an organized and extensible architecture.
   - Uses a ` .env ` file to store the Discord bot token securely.
   - Includes error handling to prevent the bot from running without a valid token.
 
-## Project Structure:
-` discordbot/
-├── main.py # Main settings and commands for the Discord bot.
-├── cogs/
-│ └── events.py # All event-related functionalities for the Discord bot.
-├── .env # Environment variables.
-└── .gitignore # Excludes unwanted files. `
+## 🔹 Screenshots:
+##### Commands:
+![image_alt](https://github.com/mateuszcalderon/discordbot/blob/master/Commands.jpg?raw=true)
 
-## License:
+##### Events:
+![image_alt](https://github.com/mateuszcalderon/discordbot/blob/master/Events.jpg?raw=true)
+
+## 🔸 Note:
+
+
+## 🔹 License:
 This project is licensed under the [MIT License](https://github.com/mateuszcalderon/discordbot/blob/main/LICENSE).
