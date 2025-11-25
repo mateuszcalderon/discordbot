@@ -31,7 +31,8 @@ automated server events, and an organized and extensible architecture.
 ![image_alt](https://github.com/mateuszcalderon/discordbot/blob/master/Events.jpg?raw=true)
 
 ## 🔸 Note:
-
+For maintenance and security reasons, the da Vinci bot will not be available for addition to any server.<br>
+This project was only developed as a personal tool to enhance and strengthen my programming skills.
 
 ## 🔹 License:
 This project is licensed under the [MIT License](https://github.com/mateuszcalderon/discordbot/blob/main/LICENSE).
