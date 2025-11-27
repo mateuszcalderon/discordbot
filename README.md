@@ -24,14 +24,14 @@ automated server events, and an organized and extensible architecture.
   - Includes error handling to prevent the bot from running without a valid token.
 
 ## 🔹 Screenshots:
-##### Commands:
+##### Slash Commands:
 ![image_alt](https://github.com/mateuszcalderon/discordbot/blob/master/Commands.jpg?raw=true)
 
-##### Events:
+##### Automatic Events:
 ![image_alt](https://github.com/mateuszcalderon/discordbot/blob/master/Events.jpg?raw=true)
 
 ## 🔸 Note:
-For maintenance and security reasons, the da Vinci bot will not be available for addition to any server.<br>
+For maintenance and security reasons, the da Vinci bot will not be available for addition to any server.
 This project was only developed as a personal tool to enhance and strengthen my programming skills.
 
 ## 🔹 License:
